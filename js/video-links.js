@@ -9,6 +9,9 @@ window.videoLinks = {
         "299536": "https://streamable.com/e/demo123", // Autre film (Streamable)
         "950387": "https://cinecactus.xyz/movies/Minecraft.mp4", // Minecraft, le film
         "671": "https://cinecactus.xyz/movies/Harry-Potter-a-l'ecole-des-sorciers.mp4", //HP1
+        "475557": "https://cinecactus.xyz/movies/Joker.mp4", //Joker
+        "9340": "https://cinecactus.xyz/movies/Les-Goonies.mp4", //Les Goonies
+        "447273": "https://cinecactus.xyz/movies/Blanche-Neige-2025.mp4", //Blanche Neige
         
         // Ajoutez autant de films que vous voulez
         // "ID_TMDB": "LIEN_IFRAME",
