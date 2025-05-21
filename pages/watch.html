@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regarder - StreamFlix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../img/logo.png" alt="StreamFlix">
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Catégories <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="genre.html?genre=28">Action</a></li>
+                                <li><a href="genre.html?genre=12">Aventure</a></li>
+                                <li><a href="genre.html?genre=16">Animation</a></li>
+                                <li><a href="genre.html?genre=35">Comédie</a></li>
+                                <li><a href="genre.html?genre=80">Crime</a></li>
+                                <li><a href="genre.html?genre=18">Drame</a></li>
+                                <li><a href="genre.html?genre=14">Fantastique</a></li>
+                                <li><a href="genre.html?genre=27">Horreur</a></li>
+                                <li><a href="genre.html?genre=10749">Romance</a></li>
+                                <li><a href="genre.html?genre=878">Science-Fiction</a></li>
+                                <li><a href="genre.html?genre=53">Thriller</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Films</a></li>
+                        <li><a href="#">Séries</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-right">
+                    <form id="search-form" class="search-form">
+                        <input type="text" id="search-input" placeholder="Rechercher...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                    
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/logo.png" alt="StreamFlix">
+                </a>
+            </div>
+            <button id="mobile-menu-close" class="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-search">
+            <form id="mobile-search-form" class="search-form">
+                <input type="text" id="mobile-search-input" placeholder="Rechercher...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li><a href="../index.html">Accueil</a></li>
+                <li>
+                    <a href="#" class="mobile-dropdown-toggle">
+                        Catégories <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="genre.html?genre=28">Action</a></li>
+                        <li><a href="genre.html?genre=12">Aventure</a></li>
+                        <li><a href="genre.html?genre=16">Animation</a></li>
+                        <li><a href="genre.html?genre=35">Comédie</a></li>
+                        <li><a href="genre.html?genre=80">Crime</a></li>
+                        <li><a href="genre.html?genre=18">Drame</a></li>
+                        <li><a href="genre.html?genre=14">Fantastique</a></li>
+                        <li><a href="genre.html?genre=27">Horreur</a></li>
+                        <li><a href="genre.html?genre=10749">Romance</a></li>
+                        <li><a href="genre.html?genre=878">Science-Fiction</a></li>
+                        <li><a href="genre.html?genre=53">Thriller</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Films</a></li>
+                <li><a href="#">Séries</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Watch Section -->
+    <main class="watch-section">
+        <div class="container">
+            <div class="watch-container">
+                <!-- Conteneur vidéo simplifié - sans contrôles personnalisés -->
+                <div class="video-container">
+                    <!-- Le contenu sera remplacé par l'iframe -->
+                </div>
+                
+                <div class="watch-info">
+                    <h1 class="watch-title">Chargement...</h1>
+                    <div class="watch-meta">
+                        <span class="watch-rating"><i class="fas fa-star"></i> 0.0</span>
+                        <span>2023</span>
+                        <span>0h 00min</span>
+                        <span class="quality">HD</span>
+                    </div>
+                    <p class="watch-description">Chargement de la description...</p>
+                    
+                    <div class="watch-actions">
+                        <button class="btn btn-secondary add-to-list">
+                            <i class="fas fa-plus"></i> Ma liste
+                        </button>
+                        <button class="btn btn-secondary share-btn">
+                            <i class="fas fa-share"></i> Partager
+                        </button>
+                        <button class="btn btn-secondary download-btn">
+                            <i class="fas fa-download"></i> Télécharger
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Episode Selector (for TV Shows) -->
+            <div class="episode-selector" style="display: none;">
+                <h2>Épisodes</h2>
+                <div class="season-selector">
+                    <!-- Season buttons will be added dynamically -->
+                </div>
+                <div class="episodes-grid">
+                    <!-- Episodes will be added dynamically -->
+                </div>
+            </div>
+            
+            <!-- Recommendations -->
+            <div class="recommendations-section">
+                <h2>Vous pourriez aussi aimer</h2>
+                <div class="swiper movie-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Recommendations will be added dynamically -->
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../img/logo.png" alt="StreamFlix">
+                    <p>Votre plateforme de streaming préférée</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>StreamFlix</h3>
+                        <ul>
+                            <li><a href="#">À propos</a></li>
+                            <li><a href="#">Nous contacter</a></li>
+                            <li><a href="#">Carrières</a></li>
+                            <li><a href="#">Actualités</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Aide</h3>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Appareils compatibles</a></li>
+                            <li><a href="#">Comment regarder</a></li>
+                            <li><a href="#">Centre d'aide</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Légal</h3>
+                        <ul>
+                            <li><a href="#">Conditions d'utilisation</a></li>
+                            <li><a href="#">Politique de confidentialité</a></li>
+                            <li><a href="#">Préférences de cookies</a></li>
+                            <li><a href="#">Informations légales</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 StreamFlix. Tous droits réservés.</p>
+                <p>StreamFlix n'est pas un service réel et ce site est créé uniquement à des fins éducatives.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="../js/tmdb-api.js"></script>
+    <script src="../js/video-links.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/debug.js"></script>
+    
+    <script>
+        // Script spécifique à la page watch.html
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Page watch.html chargée');
+            
+            // Vérifier si l'API TMDB est disponible
+            if (!window.tmdbApi) {
+                console.error('ERREUR: L\'API TMDB n\'est pas disponible sur la page watch.html');
+                return;
+            }
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            const season = urlParams.get('season');
+            const episode = urlParams.get('episode');
+            
+            if (!id) {
+                console.error('ERREUR: Aucun ID spécifié dans l\'URL');
+                return;
+            }
+            
+            // Déterminer si c'est un film ou un épisode de série
+            if (season && episode) {
+                // C'est un épisode de série
+                console.log(`Chargement de l'épisode ${episode} de la saison ${season} de la série ${id}`);
+                loadTVEpisode(id, season, episode);
+                
+                // Afficher le sélecteur d'épisodes
+                document.querySelector('.episode-selector').style.display = 'block';
+            } else {
+                // C'est un film
+                console.log(`Chargement du film ${id}`);
+                loadMovie(id);
+                
+                // Masquer le sélecteur d'épisodes
+                document.querySelector('.episode-selector').style.display = 'none';
+            }
+            
+            // Rendre les boutons fonctionnels
+            setupButtonActions();
+        });
+        
+        // Configurer les actions des boutons
+        function setupButtonActions() {
+            // Bouton "Ma liste"
+            const addToListBtn = document.querySelector('.add-to-list');
+            if (addToListBtn) {
+                addToListBtn.addEventListener('click', function() {
+                    alert('Ajouté à votre liste!');
+                    this.innerHTML = '<i class="fas fa-check"></i> Dans ma liste';
+                });
+            }
+            
+            // Bouton "Partager"
+            const shareBtn = document.querySelector('.share-btn');
+            if (shareBtn) {
+                shareBtn.addEventListener('click', function() {
+                    if (navigator.share) {
+                        navigator.share({
+                            title: document.title,
+                            url: window.location.href
+                        }).then(() => {
+                            console.log('Contenu partagé avec succès');
+                        }).catch((error) => {
+                            console.error('Erreur lors du partage:', error);
+                            alert('Lien copié dans le presse-papier!');
+                        });
+                    } else {
+                        // Copier l'URL dans le presse-papier
+                        const dummy = document.createElement('input');
+                        document.body.appendChild(dummy);
+                        dummy.value = window.location.href;
+                        dummy.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(dummy);
+                        alert('Lien copié dans le presse-papier!');
+                    }
+                });
+            }
+            
+            // Bouton "Télécharger"
+            const downloadBtn = document.querySelector('.download-btn');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function() {
+                    alert('Fonctionnalité de téléchargement non disponible dans cette démo.');
+                });
+            }
+        }
+        
+        // Charger les détails d'un film
+        async function loadMovie(movieId) {
+            try {
+                const movie = await window.tmdbApi.getMovieDetails(movieId);
+                if (!movie) {
+                    console.error('Aucun détail de film trouvé');
+                    return;
+                }
+                
+                console.log('Détails du film chargés:', movie);
+                
+                // Mettre à jour le titre de la page
+                document.title = `${movie.title} - StreamFlix`;
+                
+                // Mettre à jour les informations du film
+                updateWatchInfo(movie);
+                
+                // Charger les recommandations
+                if (movie.recommendations && movie.recommendations.results) {
+                    loadRecommendations(movie.recommendations.results);
+                }
+                
+                // Charger la vidéo
+                loadVideo(movie.backdrop_path, movieId);
+                
+            } catch (error) {
+                console.error('Erreur lors du chargement du film:', error);
+            }
+        }
+        
+        // Charger les détails d'un épisode de série
+        async function loadTVEpisode(tvId, seasonNumber, episodeNumber) {
+            try {
+                // Charger les détails de la série
+                const tvShow = await window.tmdbApi.getTVShowDetails(tvId);
+                if (!tvShow) {
+                    console.error('Aucun détail de série trouvé');
+                    return;
+                }
+                
+                console.log('Détails de la série chargés:', tvShow);
+                
+                // Charger les détails de la saison
+                const season = await window.tmdbApi.getSeasonDetails(tvId, seasonNumber);
+                if (!season || !season.episodes) {
+                    console.error('Aucun détail de saison trouvé');
+                    return;
+                }
+                
+                console.log('Détails de la saison chargés:', season);
+                
+                // Trouver l'épisode spécifique
+                const episode = season.episodes.find(ep => ep.episode_number.toString() === episodeNumber);
+                if (!episode) {
+                    console.error('Épisode non trouvé');
+                    return;
+                }
+                
+                console.log('Détails de l\'épisode chargés:', episode);
+                
+                // Mettre à jour le titre de la page
+                document.title = `${tvShow.name} S${seasonNumber}E${episodeNumber} - StreamFlix`;
+                
+                // Créer un objet combiné pour l'affichage
+                const combinedInfo = {
+                    title: `${tvShow.name} - S${seasonNumber}E${episodeNumber} - ${episode.name}`,
+                    name: `${tvShow.name} - S${seasonNumber}E${episodeNumber} - ${episode.name}`,
+                    overview: episode.overview || tvShow.overview,
+                    vote_average: episode.vote_average || tvShow.vote_average,
+                    first_air_date: tvShow.first_air_date,
+                    runtime: episode.runtime || (tvShow.episode_run_time && tvShow.episode_run_time[0]),
+                    backdrop_path: episode.still_path || tvShow.backdrop_path
+                };
+                
+                // Mettre à jour les informations de l'épisode
+                updateWatchInfo(combinedInfo);
+                
+                // Charger les saisons et épisodes pour la navigation
+                loadSeasons(tvShow, seasonNumber, episodeNumber);
+                
+                // Charger les recommandations
+                if (tvShow.recommendations && tvShow.recommendations.results) {
+                    loadRecommendations(tvShow.recommendations.results);
+                }
+                
+                // Charger la vidéo
+                loadVideo(episode.still_path || tvShow.backdrop_path, tvId, seasonNumber, episodeNumber);
+                
+            } catch (error) {
+                console.error('Erreur lors du chargement de l\'épisode:', error);
+            }
+        }
+        
+        // Mettre à jour les informations de visionnage
+        function updateWatchInfo(media) {
+            const watchTitle = document.querySelector('.watch-title');
+            if (watchTitle) {
+                watchTitle.textContent = media.title || media.name;
+            }
+            
+            const watchMeta = document.querySelector('.watch-meta');
+            if (watchMeta) {
+                const year = (media.release_date || media.first_air_date) 
+                    ? (media.release_date || media.first_air_date).substring(0, 4) 
+                    : '';
+                const duration = media.runtime ? window.tmdbApi.formatRuntime(media.runtime) : '';
+                
+                watchMeta.innerHTML = `
+                    <span class="watch-rating"><i class="fas fa-star"></i> ${media.vote_average.toFixed(1)}</span>
+                    <span>${year}</span>
+                    ${duration ? `<span>${duration}</span>` : ''}
+                    <span class="quality">HD</span>
+                `;
+            }
+            
+            const watchDescription = document.querySelector('.watch-description');
+            if (watchDescription) {
+                watchDescription.textContent = media.overview || 'Aucune description disponible.';
+            }
+        }
+        
+        // Charger la vidéo via iframe
+        function loadVideo(backdropPath, mediaId, season = null, episode = null) {
+            const videoContainer = document.querySelector('.video-container');
+            if (!videoContainer) return;
+            
+            // Déterminer le type de média et obtenir le lien vidéo
+            const mediaType = season && episode ? 'tv' : 'movie';
+            const videoLink = window.videoLinks.getVideoLink(mediaType, mediaId, season, episode);
+            
+            console.log(`Chargement de la vidéo: ${videoLink}`);
+            
+            // Remplacer le lecteur vidéo par un iframe
+            videoContainer.innerHTML = `
+                <div class="iframe-container">
+                    <iframe 
+                        src="${videoLink}" 
+                        title="Lecteur vidéo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            `;
+        }
+        
+        // Charger les saisons et épisodes pour la navigation
+        function loadSeasons(tvShow, currentSeason, currentEpisode) {
+            if (!tvShow.seasons || tvShow.seasons.length === 0) return;
+            
+            const seasonSelector = document.querySelector('.season-selector');
+            if (!seasonSelector) return;
+            
+            seasonSelector.innerHTML = '';
+            
+            // Créer les boutons de saison
+            tvShow.seasons.forEach(season => {
+                if (season.season_number === 0) return; // Ignorer les saisons spéciales
+                
+                const seasonBtn = document.createElement('button');
+                seasonBtn.className = `season-btn ${season.season_number.toString() === currentSeason ? 'active' : ''}`;
+                seasonBtn.dataset.season = season.season_number;
+                seasonBtn.textContent = `Saison ${season.season_number}`;
+                
+                seasonBtn.addEventListener('click', function() {
+                    document.querySelectorAll('.season-btn').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    loadEpisodes(tvShow.id, this.dataset.season, currentEpisode);
+                });
+                
+                seasonSelector.appendChild(seasonBtn);
+            });
+            
+            // Charger les épisodes de la saison actuelle
+            loadEpisodes(tvShow.id, currentSeason, currentEpisode);
+        }
+        
+        // Charger les épisodes d'une saison
+        async function loadEpisodes(tvId, seasonNumber, currentEpisode) {
+            try {
+                const season = await window.tmdbApi.getSeasonDetails(tvId, seasonNumber);
+                if (!season || !season.episodes || season.episodes.length === 0) return;
+                
+                const episodesGrid = document.querySelector('.episodes-grid');
+                if (!episodesGrid) return;
+                
+                episodesGrid.innerHTML = '';
+                
+                season.episodes.forEach(episode => {
+                    const episodeCard = document.createElement('div');
+                    episodeCard.className = `episode-card ${episode.episode_number.toString() === currentEpisode ? 'active' : ''}`;
+                    
+                    const stillUrl = episode.still_path 
+                        ? window.tmdbApi.getPosterUrl(episode.still_path, 'medium') 
+                        : '../img/placeholder-episode.jpg';
+                    
+                    episodeCard.innerHTML = `
+                        <a href="watch.html?id=${tvId}&season=${seasonNumber}&episode=${episode.episode_number}">
+                            <div class="episode-thumbnail">
+                                <img src="${stillUrl}" alt="${episode.name}">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="episode-info">
+                                <div class="episode-number">S${seasonNumber} E${episode.episode_number}</div>
+                                <h3 class="episode-title">${episode.name}</h3>
+                                <div class="episode-duration">${window.tmdbApi.formatRuntime(episode.runtime || 0)}</div>
+                            </div>
+                        </a>
+                    `;
+                    
+                    episodesGrid.appendChild(episodeCard);
+                });
+                
+            } catch (error) {
+                console.error('Erreur lors du chargement des épisodes:', error);
+            }
+        }
+        
+        // Charger les recommandations
+        function loadRecommendations(recommendations) {
+            const recommendationsWrapper = document.querySelector('.movie-swiper .swiper-wrapper');
+            if (!recommendationsWrapper || !recommendations || recommendations.length === 0) return;
+            
+            recommendationsWrapper.innerHTML = '';
+            
+            recommendations.slice(0, 10).forEach(item => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                
+                const title = item.title || item.name;
+                const posterUrl = window.tmdbApi.getPosterUrl(item.poster_path, 'medium');
+                const detailUrl = item.media_type === 'tv' || item.first_air_date 
+                    ? `series.html?id=${item.id}` 
+                    : `movie.html?id=${item.id}`;
+                const year = (item.release_date || item.first_air_date) 
+                    ? (item.release_date || item.first_air_date).substring(0, 4) 
+                    : '';
+                const mediaType = item.media_type === 'tv' || item.first_air_date ? 'Série' : 'Film';
+                
+                slide.innerHTML = `
+                    <div class="movie-card">
+                        <a href="${detailUrl}">
+                            <div class="movie-poster">
+                                <img src="${posterUrl}" alt="${title}">
+                                <div class="movie-overlay">
+                                    <div class="movie-actions">
+                                        <span class="movie-rating"><i class="fas fa-star"></i> ${item.vote_average.toFixed(1)}</span>
+                                        <button class="btn-play"><i class="fas fa-play"></i></button>
+                                    </div>
+                                </div>
+                                <span class="movie-quality">HD</span>
+                            </div>
+                            <div class="movie-info">
+                                <h3 class="movie-title">${title}</h3>
+                                <div class="movie-meta">
+                                    <span class="movie-year">${year}</span>
+                                    <span class="movie-genre">${mediaType}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                
+                recommendationsWrapper.appendChild(slide);
+            });
+            
+            // Initialiser le slider Swiper
+            if (typeof Swiper !== 'undefined') {
+                new Swiper('.movie-swiper', {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                    navigation: {
+                        nextEl: '.movie-swiper .swiper-button-next',
+                        prevEl: '.movie-swiper .swiper-button-prev',
+                    },
+                    breakpoints: {
+                        576: { slidesPerView: 3 },
+                        768: { slidesPerView: 4 },
+                        992: { slidesPerView: 5 },
+                        1200: { slidesPerView: 6 }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

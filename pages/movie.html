@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du film - StreamFlix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../img/logo.png" alt="StreamFlix">
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Catégories <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="genre.html?genre=28">Action</a></li>
+                                <li><a href="genre.html?genre=12">Aventure</a></li>
+                                <li><a href="genre.html?genre=16">Animation</a></li>
+                                <li><a href="genre.html?genre=35">Comédie</a></li>
+                                <li><a href="genre.html?genre=80">Crime</a></li>
+                                <li><a href="genre.html?genre=18">Drame</a></li>
+                                <li><a href="genre.html?genre=14">Fantastique</a></li>
+                                <li><a href="genre.html?genre=27">Horreur</a></li>
+                                <li><a href="genre.html?genre=10749">Romance</a></li>
+                                <li><a href="genre.html?genre=878">Science-Fiction</a></li>
+                                <li><a href="genre.html?genre=53">Thriller</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="movies.html">Films</a></li>
+                        <li><a href="series.html">Séries</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-right">
+                    <form id="search-form" class="search-form">
+                        <input type="text" id="search-input" placeholder="Rechercher...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                    
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/logo.png" alt="StreamFlix">
+                </a>
+            </div>
+            <button id="mobile-menu-close" class="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-search">
+            <form id="mobile-search-form" class="search-form">
+                <input type="text" id="mobile-search-input" placeholder="Rechercher...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li><a href="../index.html">Accueil</a></li>
+                <li>
+                    <a href="#" class="mobile-dropdown-toggle">
+                        Catégories <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="genre.html?genre=28">Action</a></li>
+                        <li><a href="genre.html?genre=12">Aventure</a></li>
+                        <li><a href="genre.html?genre=16">Animation</a></li>
+                        <li><a href="genre.html?genre=35">Comédie</a></li>
+                        <li><a href="genre.html?genre=80">Crime</a></li>
+                        <li><a href="genre.html?genre=18">Drame</a></li>
+                        <li><a href="genre.html?genre=14">Fantastique</a></li>
+                        <li><a href="genre.html?genre=27">Horreur</a></li>
+                        <li><a href="genre.html?genre=10749">Romance</a></li>
+                        <li><a href="genre.html?genre=878">Science-Fiction</a></li>
+                        <li><a href="genre.html?genre=53">Thriller</a></li>
+                    </ul>
+                </li>
+                <li><a href="movies.html">Films</a></li>
+                <li><a href="series.html">Séries</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Detail Section -->
+    <section class="detail-section">
+        <div class="detail-hero" style="background-image: url('../img/placeholder-backdrop.jpg');">
+            <!-- Background image will be set dynamically -->
+        </div>
+        
+        <div class="container">
+            <div class="detail-content">
+                <div class="detail-main">
+                    <div class="detail-poster">
+                        <img src="../img/placeholder-poster.jpg" alt="Titre du film" class="detail-poster-img">
+                    </div>
+                    
+                    <div class="detail-info">
+                        <h1 class="detail-title">Chargement...</h1>
+                        
+                        <div class="detail-meta">
+                            <span class="detail-rating"><i class="fas fa-star"></i> 0.0</span>
+                            <span>2023</span>
+                            <span>0h 00min</span>
+                            <span class="quality">HD</span>
+                        </div>
+                        
+                        <div class="detail-buttons">
+                            <a href="#" class="btn btn-primary watch-btn">
+                                <i class="fas fa-play"></i> Regarder
+                            </a>
+                            <button class="btn btn-secondary add-to-list">
+                                <i class="fas fa-plus"></i> Ma liste
+                            </button>
+                            <button class="btn btn-secondary share-btn">
+                                <i class="fas fa-share"></i> Partager
+                            </button>
+                        </div>
+                        
+                        <p class="detail-description">Chargement de la description...</p>
+                        
+                        <div class="detail-facts">
+                            <div class="detail-fact">
+                                <span class="detail-fact-label">Réalisateur</span>
+                                <span class="detail-fact-value">Chargement...</span>
+                            </div>
+                            <div class="detail-fact">
+                                <span class="detail-fact-label">Acteurs</span>
+                                <span class="detail-fact-value">Chargement...</span>
+                            </div>
+                            <div class="detail-fact">
+                                <span class="detail-fact-label">Genres</span>
+                                <span class="detail-fact-value">Chargement...</span>
+                            </div>
+                            <div class="detail-fact">
+                                <span class="detail-fact-label">Pays</span>
+                                <span class="detail-fact-value">Chargement...</span>
+                            </div>
+                            <div class="detail-fact">
+                                <span class="detail-fact-label">Production</span>
+                                <span class="detail-fact-value">Chargement...</span>
+                            </div>
+                            <div class="detail-fact">
+                                <span class="detail-fact-label">Date de sortie</span>
+                                <span class="detail-fact-value">Chargement...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Films similaires -->
+                <div class="recommendations-section">
+                    <h2>Films similaires</h2>
+                    <div class="swiper movie-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Les films similaires seront ajoutés dynamiquement -->
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../img/logo.png" alt="StreamFlix">
+                    <p>Votre plateforme de streaming préférée</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>StreamFlix</h3>
+                        <ul>
+                            <li><a href="#">À propos</a></li>
+                            <li><a href="#">Nous contacter</a></li>
+                            <li><a href="#">Carrières</a></li>
+                            <li><a href="#">Actualités</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Aide</h3>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Appareils compatibles</a></li>
+                            <li><a href="#">Comment regarder</a></li>
+                            <li><a href="#">Centre d'aide</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Légal</h3>
+                        <ul>
+                            <li><a href="#">Conditions d'utilisation</a></li>
+                            <li><a href="#">Politique de confidentialité</a></li>
+                            <li><a href="#">Préférences de cookies</a></li>
+                            <li><a href="#">Informations légales</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 StreamFlix. Tous droits réservés.</p>
+                <p>StreamFlix n'est pas un service réel et ce site est créé uniquement à des fins éducatives.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="../js/tmdb-api.js"></script>
+    <script src="../js/video-links.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/debug.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Rendre les boutons fonctionnels
+            setupButtonActions();
+        });
+        
+        // Configurer les actions des boutons
+        function setupButtonActions() {
+            // Bouton "Ma liste"
+            const addToListBtn = document.querySelector('.add-to-list');
+            if (addToListBtn) {
+                addToListBtn.addEventListener('click', function() {
+                    alert('Ajouté à votre liste!');
+                    this.innerHTML = '<i class="fas fa-check"></i> Dans ma liste';
+                });
+            }
+            
+            // Bouton "Partager"
+            const shareBtn = document.querySelector('.share-btn');
+            if (shareBtn) {
+                shareBtn.addEventListener('click', function() {
+                    if (navigator.share) {
+                        navigator.share({
+                            title: document.title,
+                            url: window.location.href
+                        }).then(() => {
+                            console.log('Contenu partagé avec succès');
+                        }).catch((error) => {
+                            console.error('Erreur lors du partage:', error);
+                            alert('Lien copié dans le presse-papier!');
+                        });
+                    } else {
+                        // Copier l'URL dans le presse-papier
+                        const dummy = document.createElement('input');
+                        document.body.appendChild(dummy);
+                        dummy.value = window.location.href;
+                        dummy.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(dummy);
+                        alert('Lien copié dans le presse-papier!');
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

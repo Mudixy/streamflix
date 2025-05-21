@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Débogage API TMDB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #e50914;
+        }
+        .test-section {
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #b2070f;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow: auto;
+            max-height: 300px;
+        }
+        .api-key-form {
+            margin-bottom: 20px;
+        }
+        .api-key-form input {
+            padding: 8px;
+            width: 300px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Débogage API TMDB</h1>
+    
+    <div class="api-key-form">
+        <h2>Configuration de l'API</h2>
+        <input type="text" id="api-key" placeholder="Entrez votre clé API TMDB">
+        <button id="save-api-key">Sauvegarder</button>
+        <p>Clé API actuelle: <span id="current-api-key">Non définie</span></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test des films populaires</h2>
+        <button id="test-popular-movies">Tester getPopularMovies()</button>
+        <pre id="popular-movies-result">Les résultats s'afficheront ici...</pre>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test des séries populaires</h2>
+        <button id="test-popular-tv">Tester getPopularTVShows()</button>
+        <pre id="popular-tv-result">Les résultats s'afficheront ici...</pre>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test des détails d'un film</h2>
+        <input type="text" id="movie-id" placeholder="ID du film (ex: 505642 pour Dune 2)" value="505642">
+        <button id="test-movie-details">Tester getMovieDetails()</button>
+        <pre id="movie-details-result">Les résultats s'afficheront ici...</pre>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test des détails d'une série</h2>
+        <input type="text" id="tv-id" placeholder="ID de la série (ex: 1396 pour Breaking Bad)" value="1396">
+        <button id="test-tv-details">Tester getTVShowDetails()</button>
+        <pre id="tv-details-result">Les résultats s'afficheront ici...</pre>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test de recherche</h2>
+        <input type="text" id="search-query" placeholder="Terme de recherche" value="Star Wars">
+        <button id="test-search">Tester searchMulti()</button>
+        <pre id="search-result">Les résultats s'afficheront ici...</pre>
+    </div>
+    
+    <script>
+        // Configuration de l'API TMDB
+        let TMDB_API_KEY = localStorage.getItem('tmdb_api_key') || '';
+        const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
+        
+        // Afficher la clé API actuelle
+        document.getElementById('current-api-key').textContent = TMDB_API_KEY ? TMDB_API_KEY.substring(0, 5) + '...' : 'Non définie';
+        document.getElementById('api-key').value = TMDB_API_KEY;
+        
+        // Sauvegarder la clé API
+        document.getElementById('save-api-key').addEventListener('click', function() {
+            const apiKey = document.getElementById('api-key').value.trim();
+            if (apiKey) {
+                TMDB_API_KEY = apiKey;
+                localStorage.setItem('tmdb_api_key', apiKey);
+                document.getElementById('current-api-key').textContent = apiKey.substring(0, 5) + '...';
+                alert('Clé API sauvegardée!');
+            } else {
+                alert('Veuillez entrer une clé API valide.');
+            }
+        });
+        
+        // Fonction pour faire des requêtes à l'API TMDB
+        async function fetchFromTMDB(endpoint, params = {}) {
+            if (!TMDB_API_KEY) {
+                throw new Error('Clé API TMDB non définie. Veuillez entrer votre clé API.');
+            }
+            
+            const queryParams = new URLSearchParams({
+                api_key: TMDB_API_KEY,
+                language: 'fr-FR',
+                ...params
+            });
+            
+            try {
+                const response = await fetch(`${TMDB_BASE_URL}${endpoint}?${queryParams}`);
+                if (!response.ok) {
+                    throw new Error(`Erreur TMDB: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Erreur lors de la requête TMDB:', error);
+                throw error;
+            }
+        }
+        
+        // Récupérer les films populaires
+        async function getPopularMovies(page = 1) {
+            return await fetchFromTMDB('/movie/popular', { page });
+        }
+        
+        // Récupérer les séries populaires
+        async function getPopularTVShows(page = 1) {
+            return await fetchFromTMDB('/tv/popular', { page });
+        }
+        
+        // Récupérer les détails d'un film
+        async function getMovieDetails(movieId) {
+            return await fetchFromTMDB(`/movie/${movieId}`, { 
+                append_to_response: 'credits,videos,similar,recommendations' 
+            });
+        }
+        
+        // Récupérer les détails d'une série
+        async function getTVShowDetails(tvId) {
+            return await fetchFromTMDB(`/tv/${tvId}`, { 
+                append_to_response: 'credits,videos,similar,recommendations,seasons' 
+            });
+        }
+        
+        // Rechercher des films et séries
+        async function searchMulti(query, page = 1) {
+            return await fetchFromTMDB('/search/multi', { query, page });
+        }
+        
+        // Test des films populaires
+        document.getElementById('test-popular-movies').addEventListener('click', async function() {
+            const resultElement = document.getElementById('popular-movies-result');
+            resultElement.textContent = 'Chargement...';
+            
+            try {
+                const result = await getPopularMovies();
+                resultElement.textContent = JSON.stringify(result, null, 2);
+            } catch (error) {
+                resultElement.textContent = `Erreur: ${error.message}`;
+            }
+        });
+        
+        // Test des séries populaires
+        document.getElementById('test-popular-tv').addEventListener('click', async function() {
+            const resultElement = document.getElementById('popular-tv-result');
+            resultElement.textContent = 'Chargement...';
+            
+            try {
+                const result = await getPopularTVShows();
+                resultElement.textContent = JSON.stringify(result, null, 2);
+            } catch (error) {
+                resultElement.textContent = `Erreur: ${error.message}`;
+            }
+        });
+        
+        // Test des détails d'un film
+        document.getElementById('test-movie-details').addEventListener('click', async function() {
+            const resultElement = document.getElementById('movie-details-result');
+            resultElement.textContent = 'Chargement...';
+            
+            const movieId = document.getElementById('movie-id').value;
+            if (!movieId) {
+                resultElement.textContent = 'Erreur: Veuillez entrer un ID de film.';
+                return;
+            }
+            
+            try {
+                const result = await getMovieDetails(movieId);
+                resultElement.textContent = JSON.stringify(result, null, 2);
+            } catch (error) {
+                resultElement.textContent = `Erreur: ${error.message}`;
+            }
+        });
+        
+        // Test des détails d'une série
+        document.getElementById('test-tv-details').addEventListener('click', async function() {
+            const resultElement = document.getElementById('tv-details-result');
+            resultElement.textContent = 'Chargement...';
+            
+            const tvId = document.getElementById('tv-id').value;
+            if (!tvId) {
+                resultElement.textContent = 'Erreur: Veuillez entrer un ID de série.';
+                return;
+            }
+            
+            try {
+                const result = await getTVShowDetails(tvId);
+                resultElement.textContent = JSON.stringify(result, null, 2);
+            } catch (error) {
+                resultElement.textContent = `Erreur: ${error.message}`;
+            }
+        });
+        
+        // Test de recherche
+        document.getElementById('test-search').addEventListener('click', async function() {
+            const resultElement = document.getElementById('search-result');
+            resultElement.textContent = 'Chargement...';
+            
+            const query = document.getElementById('search-query').value;
+            if (!query) {
+                resultElement.textContent = 'Erreur: Veuillez entrer un terme de recherche.';
+                return;
+            }
+            
+            try {
+                const result = await searchMulti(query);
+                resultElement.textContent = JSON.stringify(result, null, 2);
+            } catch (error) {
+                resultElement.textContent = `Erreur: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>

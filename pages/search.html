@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche - StreamFlix</title>
+    <meta name="description" content="Recherchez des films et séries sur StreamFlix">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <!-- Logo -->
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">S</span>
+                    <span class="logo-text">StreamFlix</span>
+                </a>
+
+                <!-- Navigation principale -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="films.html">Films</a></li>
+                        <li><a href="series.html">Séries</a></li>
+                        <li><a href="animes.html">Animés</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Genres <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="genre.html?genre=28">Action</a>
+                                <a href="genre.html?genre=35">Comédie</a>
+                                <a href="genre.html?genre=18">Drame</a>
+                                <a href="genre.html?genre=27">Horreur</a>
+                                <a href="genre.html?genre=878">Science-Fiction</a>
+                                <a href="genre.html?genre=53">Thriller</a>
+                                <a href="genre.html?genre=10749">Romance</a>
+                                <a href="genre.html?genre=16">Animation</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Barre de recherche -->
+                <div class="search-bar">
+                    <form id="search-form">
+                        <input type="text" id="search-input" placeholder="Rechercher un film, une série...">
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Actions utilisateur -->
+                <div class="user-actions">
+                    <button class="theme-toggle" id="theme-toggle" title="Changer de thème">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-primary">Connexion</a>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">S</span>
+                <span class="logo-text">StreamFlix</span>
+            </a>
+            <button class="mobile-menu-close" id="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="films.html">Films</a></li>
+                <li><a href="series.html">Séries</a></li>
+                <li><a href="animes.html">Animés</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#" class="mobile-dropdown-toggle">
+                        Genres <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="mobile-dropdown-menu">
+                        <a href="genre.html?genre=28">Action</a>
+                        <a href="genre.html?genre=35">Comédie</a>
+                        <a href="genre.html?genre=18">Drame</a>
+                        <a href="genre.html?genre=27">Horreur</a>
+                        <a href="genre.html?genre=878">Science-Fiction</a>
+                        <a href="genre.html?genre=53">Thriller</a>
+                        <a href="genre.html?genre=10749">Romance</a>
+                        <a href="genre.html?genre=16">Animation</a>
+                    </div>
+                </li>
+                <li><a href="login.html">Connexion</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="search-results-section">
+                <h1 class="search-results-title">Résultats pour "..."</h1>
+                
+                <div class="search-filters">
+                    <button class="search-filter active" data-filter="all">Tous</button>
+                    <button class="search-filter" data-filter="movie">Films</button>
+                    <button class="search-filter" data-filter="tv">Séries</button>
+                    <button class="search-filter" data-filter="anime">Animés</button>
+                </div>
+                
+                <div class="search-results-grid">
+                    <!-- Les résultats seront générés dynamiquement par JavaScript -->
+                    <div class="loading">Chargement des résultats...</div>
+                </div>
+                
+                <div class="pagination">
+                    <button class="pagination-prev" disabled>
+                        <i class="fas fa-chevron-left"></i> Précédent
+                    </button>
+                    <div class="pagination-info">Page <span class="current-page">1</span> sur <span class="total-pages">1</span></div>
+                    <button class="pagination-next" disabled>
+                        Suivant <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">
+                        <span class="logo-icon">S</span>
+                        <span class="logo-text">StreamFlix</span>
+                    </a>
+                    <p class="footer-description">
+                        StreamFlix est une plateforme de streaming qui vous permet de regarder vos films et séries préférés en haute qualité.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="films.html">Films</a></li>
+                        <li><a href="series.html">Séries</a></li>
+                        <li><a href="animes.html">Animés</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Genres</h3>
+                    <ul>
+                        <li><a href="genre.html?genre=28">Action</a></li>
+                        <li><a href="genre.html?genre=35">Comédie</a></li>
+                        <li><a href="genre.html?genre=18">Drame</a></li>
+                        <li><a href="genre.html?genre=27">Horreur</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Légal</h3>
+                    <ul>
+                        <li><a href="cgu.html">Conditions d'utilisation</a></li>
+                        <li><a href="privacy.html">Politique de confidentialité</a></li>
+                        <li><a href="dmca.html">DMCA</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 StreamFlix. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/tmdb-api.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/tmdb-api.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/debug.js"></script>
+</body>
+</html>
