@@ -12,6 +12,7 @@ window.videoLinks = {
         "475557": "https://cinecactus.xyz/movies/Joker.mp4", //Joker
         "9340": "https://cinecactus.xyz/movies/Les-Goonies.mp4", //Les Goonies
         "447273": "https://cinecactus.xyz/movies/Blanche-Neige-2025.mp4", //Blanche Neige
+        "1195506": "https://cinecactus.xyz/movies/Novocaine.mp4", //Novocaine
         
         // Ajoutez autant de films que vous voulez
         // "ID_TMDB": "LIEN_IFRAME",

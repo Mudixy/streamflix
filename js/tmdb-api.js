@@ -1,5 +1,5 @@
 // Configuration de l'API TMDB
-const TMDB_API_KEY = '4aa5776ef3fdc9d6ee9a7b8815055984'; // Remplacez par votre clé API TMDB
+const TMDB_API_KEY = 'VOTRE_CLE_API_TMDB'; // Remplacez par votre clé API TMDB
 const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
 const TMDB_IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
 
@@ -20,12 +20,12 @@ const BACKDROP_SIZES = {
 
 // Fonction pour construire les URLs des images
 function getPosterUrl(posterPath, size = 'medium') {
-    if (!posterPath) return 'img/placeholder-poster.jpg';
+    if (!posterPath) return '../img/placeholder-poster.jpg';
     return `${TMDB_IMAGE_BASE_URL}/${POSTER_SIZES[size]}${posterPath}`;
 }
 
 function getBackdropUrl(backdropPath, size = 'large') {
-    if (!backdropPath) return 'img/placeholder-backdrop.jpg';
+    if (!backdropPath) return '../img/placeholder-backdrop.jpg';
     return `${TMDB_IMAGE_BASE_URL}/${BACKDROP_SIZES[size]}${backdropPath}`;
 }
 
